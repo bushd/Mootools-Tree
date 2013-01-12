@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>RexExp Test</title>
+		<script src="mootools/mootools.js"></script>
+  		<script src="mootools/mootools.more.js"></script>
+  		<script src="tree/mt.tree.datatype.class.js"></script>
+	</head>
+	<body>
+		<section id="here"></section>
+	</body>
+	<script>
+
+		myTree = new Tree();
+
+		var node = myTree.createAndAddNodeAt('text', 'Ich bin ein Text');
+
+		console.log(myTree);
+
+		node.setValue('Ich wurde geändert');
+	
+		var node2 = myTree.createAndAddNodeAt('spruch', 'Hier steht was unintelligentes', node);
+
+		subtree = myTree.getSubtreeByNode(node);
+
+		console.log(subtree);
+
+		node2.setValue('Hier steht was sinnvolles');
+
+		console.log(node);
+
+		var node3 = myTree.createAndAddNodeAt('satz', 'Was ist los?', node);
+
+		console.log(myTree);
+
+
+	</script>
+</html>
